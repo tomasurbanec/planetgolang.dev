@@ -1,0 +1,11 @@
+<ul class="pagination">
+{{ if ne .CurrentPage 1 }}
+    <li><a href="/1.html" class="page-item">&laquo; First</a></li>
+    <li><a href="/{{ minus .CurrentPage 1 }}.html" class="page-item">&laquo; Prev</a></li>
+{{ end }}
+<li>{{ .CurrentPage }} / {{ .TotalPages }}</li>
+{{ if ne .CurrentPage .TotalPages }}
+    <li><a href="/{{ plus .CurrentPage 1 }}.html" class="page-item">Next &raquo;</a></li>
+    <li><a href="/{{ .TotalPages }}.html" class="page-item">Last &raquo;</a></li>
+{{ end }}
+</ul>

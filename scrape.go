@@ -1,4 +1,4 @@
-package planetgolang
+package main
 
 import (
 	"io/ioutil"

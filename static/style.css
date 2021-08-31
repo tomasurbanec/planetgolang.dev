@@ -1,0 +1,110 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-size: 16px;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: block;
+    width: 100%;
+    background-color: #E0EBF5;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.navbar > div {
+    display: flex;
+    font-size: 3rem;
+}
+
+.mission {
+    display: none;
+}
+
+.navbar-left {
+    flex-direction: column;
+}
+
+article {
+    background: #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+article > h3 {
+    font-size: 2rem;
+    margin: 5px 0px;
+}
+
+svg {
+    width: 3rem;
+    height: 3rem;
+    padding-top: 15px;
+    padding-left: 1rem;
+}
+
+.navbar a {
+    display: block;
+}
+
+a {
+    color: #333;
+    text-decoration: underline;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.metadata {
+    font-style: italic;
+}
+
+.pagination {
+    display: flex;
+    margin: 20px auto;
+    flex-grow: 1;
+    padding: 0;
+    justify-content: center;
+}
+
+.pagination li {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.current-page {
+    font-weight: bold;
+}
+
+@media only screen and (min-device-width : 768px) {
+    main {
+        width: 80%;
+        padding: 0;
+    }
+
+    .mission {
+        display: block;
+        font-size: 1rem;
+        padding-left: 0px;
+    }
+}
+
+.footer {
+    display: block;
+    width: 100%;
+    background-color: #E0EBF5;
+    color: #333;
+    padding: 3px;
+}

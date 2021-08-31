@@ -1,4 +1,4 @@
-package planetgolang
+package main
 
 import (
 	"strings"
@@ -7,7 +7,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-func GoDevScraper() ([]Post, error) {
+func GoDevScraper(key string, src *Source) ([]Post, error) {
 	ary := []Post{}
 
 	body, err := Scrape("https://go.dev/blog/")
@@ -38,7 +38,7 @@ func GoDevScraper() ([]Post, error) {
 			Title:       s.Find("a").Text(),
 			Author:      s.Find(".author").Text(),
 			Url:         "https://go.dev" + href,
-			Source:      "The Go Blog",
+			Source:      key,
 			PublishedAt: t,
 		}
 

@@ -1,0 +1,105 @@
+godev:
+  title: The Go Blog
+  scrape_url: https://go.dev/blog/
+  url: https://go.dev/blog/
+  scraper: GoDevScraper
+gopheracademy:
+  title: Gopher Academy
+  url: https://blog.gopheracademy.com/
+  scrape_url: https://blog.gopheracademy.com/index.xml
+  scraper: FeedScraper
+davecheney:
+  title: The acme of foolishness
+  url: https://dave.cheney.net/
+  scrape_url: https://dave.cheney.net/feed
+  scraper: FeedScraper
+spf13:
+  title: spf13
+  url: https://spf13.com/post/
+  scrape_url: https://spf13.com/post/index.xml
+  scraper: FeedScraper
+matryer:
+  title: Mat Ryer
+  url: https://medium.com/@matryer
+  scrape_url: https://medium.com/feed/@matryer
+  scraper: FeedScraper
+mattaimonetti:
+  title: Matt Aimonetti
+  url: https://matt.aimonetti.net/
+  scrape_url: https://matt.aimonetti.net/index.xml
+  scraper: FeedScraper
+marcioio:
+  title: marcio.io
+  url: http://marcio.io
+  scrape_url: http://marcio.io/index.xml
+  scraper: FeedScraper
+carlosbecker:
+  title: Carlos Becker
+  url: https://carlosbecker.com/
+  scrape_url: https://carlosbecker.com/index.xml
+  scraper: FeedScraper
+ardanlabs:
+  title: Ardan Labs
+  url: https://www.ardanlabs.com/blog/
+  scrape_url: https://www.ardanlabs.com/blog/index.xml
+  scraper: FeedScraper
+golangweekly:
+  title: Golang Weekly
+  url: https://golangweekly.com
+  scrape_url: https://cprss.s3.amazonaws.com/golangweekly.com.xml
+  scraper: FeedScraper
+alexedwards:
+  title: Alex Edwards
+  url: https://www.alexedwards.net/blog/
+  scrape_url: https://www.alexedwards.net/static/feed.rss
+  scraper: FeedScraper
+golangtutorials:
+  title: GoLang Tutorials
+  url: https://golangtutorials.blogspot.com/
+  scrape_url: https://golangtutorials.blogspot.com/feeds/posts/default
+  scraper: FeedScraper
+sharpend:
+  title: Mathias Lafeldt
+  url: https://sharpend.io/
+  scrape_url: https://sharpend.io/feed.xml
+  scraper: FeedScraper
+marcelobytes:
+  title: Marcelo Bytes
+  scrape_url: https://blog.ksub.org/bytes/index.xml
+  url: https://blog.ksub.org/bytes/
+  scraper: FeedScraper
+minaandrawos:
+  title: Mina Andrawos' Golang posts
+  url: https://www.minaandrawos.com/category/golang-2/
+  scrape_url: https://www.minaandrawos.com/category/golang-2/feed/
+  scraper: FeedScraper
+alexpliutau:
+  title: Alex Pliutau's Blog
+  url: https://pliutau.com/
+  scrape_url: https://pliutau.com/index.xml
+  scraper: FeedScraper
+goahead:
+  title: Go Ahead
+  scrape_url: https://jbrandhorst.com/post/index.xml
+  url: https://jbrandhorst.com/post/
+  scraper: FeedScraper
+appliedgo:
+  title: Applied Go
+  scrape_url: https://appliedgo.net/index.xml
+  url: https://appliedgo.net/
+  scraper: FeedScraper
+calhounio:
+  title: Calhoun.io
+  scrape_url: https://www.calhoun.io/rss/index.xml
+  url: https://www.calhoun.io/
+  scraper: FeedScraper
+learngoprogramming:
+  title: Learn Go Programming
+  scrape_url: https://blog.learngoprogramming.com/feed
+  url: https://blog.learngoprogramming.com/
+  scraper: FeedScraper
+savola:
+  title: Timo Savola
+  scrape_url: https://savo.la/atom.xml
+  url: https://savo.la/#go
+  scraper: FeedScraper

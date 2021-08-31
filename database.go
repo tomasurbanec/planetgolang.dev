@@ -1,47 +1,48 @@
-package planetgolang
+package main
 
 import (
-	"database/sql"
-
-	_ "github.com/mattn/go-sqlite3"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 )
 
+var Db *gorm.DB
+
+const PER_PAGE = 10
+
+func InitializeDb() error {
+	var err error
+	Db, err = gorm.Open(sqlite.Open("gorm.db"), &gorm.Config{})
+
+	Db.AutoMigrate(&Post{})
+
+	return err
+}
+
 func InsertPost(p Post) error {
-	db, err := sql.Open("sqlite3", "./planetgolang.db")
-
-	if err != nil {
-		return err
-	}
-
-	stmt, err := db.Prepare(`
-		INSERT INTO posts
-		(title, summary, author, source, published_at, url)
-		VALUES
-		(?, ?, ?, ?, ?, ?)
-		ON CONFLICT(url) DO UPDATE
-		set title = excluded.title,
-		summary = excluded.summary,
-		author = excluded.author,
-		source = excluded.source,
-		published_at = excluded.published_at;
-	`)
-
-	if err != nil {
-		return err
-	}
-
-	_, err = stmt.Exec(
-		p.Title,
-		p.Summary,
-		p.Author,
-		p.Source,
-		p.PublishedAt,
-		p.Url,
-	)
+	err := Db.Clauses(clause.OnConflict{
+		UpdateAll: true,
+	}).Create(&p).Error
 
 	if err != nil {
 		return err
 	}
 
 	return nil
+}
+
+func ReadPosts(page int) ([]Post, error) {
+	posts := []Post{}
+
+	res := Db.Limit(PER_PAGE).Offset(page * PER_PAGE).Order("published_at desc").Find(&posts)
+
+	return posts, res.Error
+}
+
+func CountPosts() (int64, error) {
+	posts := []Post{}
+
+	res := Db.Find(&posts)
+
+	return res.RowsAffected, res.Error
 }

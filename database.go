@@ -19,6 +19,14 @@ func InitializeDb() error {
 	return err
 }
 
+func FindPostByUrl(url string) (Post, error) {
+	post := Post{}
+
+	err := Db.Where("url = ?", url).First(&post).Error
+
+	return post, err
+}
+
 func InsertPost(p Post) error {
 	err := Db.Clauses(clause.OnConflict{
 		UpdateAll: true,

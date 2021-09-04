@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/mmcdole/gofeed"
+	"gorm.io/gorm"
 )
 
 func FeedScraper(key string, src *Source) ([]Post, error) {
@@ -30,7 +31,10 @@ func FeedScraper(key string, src *Source) ([]Post, error) {
 			authors = append(authors, author.Name)
 		}
 
+		previousPost, _ := FindPostByUrl(item.Link)
+
 		post := Post{
+			Model:       gorm.Model{ID: previousPost.ID},
 			Title:       item.Title,
 			Summary:     item.Description,
 			Url:         item.Link,

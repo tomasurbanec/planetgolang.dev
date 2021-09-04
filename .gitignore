@@ -1,2 +1,3 @@
 planetgolang.db
 /dist/*
+gorm.db

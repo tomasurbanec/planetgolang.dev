@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
+	"gorm.io/gorm"
 )
 
 func GoDevScraper(key string, src *Source) ([]Post, error) {
@@ -33,11 +34,14 @@ func GoDevScraper(key string, src *Source) ([]Post, error) {
 
 		var t time.Time
 		t, lastErr = time.Parse("_2 January 2006", s.Find(".date").Text())
+		url := "https://go.dev" + href
+		previousPost, _ := FindPostByUrl(url)
 
 		post := Post{
+			Model:       gorm.Model{ID: previousPost.ID},
 			Title:       s.Find("a").Text(),
 			Author:      s.Find(".author").Text(),
-			Url:         "https://go.dev" + href,
+			Url:         url,
 			Source:      key,
 			PublishedAt: t,
 		}

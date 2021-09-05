@@ -17,6 +17,10 @@ type Post struct {
 	SourceUrl   string
 }
 
+func (p *Post) FormattedShortPublishedAt() string {
+	return p.PublishedAt.Format("02 Jan 06")
+}
+
 func (p *Post) FormattedPublishedAt() string {
 	return p.PublishedAt.Format("02 Jan 06 15:04 MST")
 }

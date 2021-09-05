@@ -1,11 +1,13 @@
 <article data-id="{{ .ID }}">
-<h3><a href="{{ .Url }}" target="_blank">{{ .Title }}</a></h3>
-<div class="metadata">
-    {{ if ne .Author "" }}
-    <strong>{{ .Author }}</strong> @
-    {{ end }}
-    <strong title="{{ .FormattedPublishedAt }}">{{ .FormattedShortPublishedAt }}</strong> on <strong><a href="{{ .SourceUrl }}" target="_blank">{{ .Source }}</a></strong></div>
-<p>
-{{ .Summary }}
-</p>
+    <h3><a href="{{ .Url }}" target="_blank" rel="bookmark">{{ .Title }}</a></h3>
+    <div class="metadata">
+        {{ if ne .Author "" }}
+        <strong>{{ .Author }}</strong> @
+        {{ end }}
+        <strong title="{{ .FormattedPublishedAt }}">{{ .FormattedShortPublishedAt }}</strong> on <strong><a
+                href="{{ .SourceUrl }}" rel="author" target="_blank">{{ .Source }}</a></strong>
+    </div>
+    <p>
+        {{ .Summary }}
+    </p>
 </article>

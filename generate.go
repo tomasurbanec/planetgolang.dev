@@ -12,6 +12,7 @@ import (
 	fd "github.com/gorilla/feeds"
 
 	strip "github.com/grokify/html-strip-tags-go"
+	"github.com/snabb/sitemap"
 	cli "github.com/urfave/cli/v2"
 	yaml "gopkg.in/yaml.v2"
 )
@@ -77,6 +78,8 @@ func Generate(_ *cli.Context) error {
 
 	feedItems := []*fd.Item{}
 
+	smap := sitemap.New()
+
 	for {
 		posts, err := ReadPosts(currentPage)
 
@@ -127,6 +130,8 @@ func Generate(_ *cli.Context) error {
 			}
 
 			f, err = os.Create("./dist/1.html")
+			smap.Add(&sitemap.URL{Loc: "https://planetgolang.dev/1.html", LastMod: &now, ChangeFreq: sitemap.Hourly})
+			smap.Add(&sitemap.URL{Loc: "https://planetgolang.dev/", LastMod: &now, ChangeFreq: sitemap.Hourly})
 
 			if err != nil {
 				log.Fatalf("Failed to generate site: %s", err.Error())
@@ -154,6 +159,7 @@ func Generate(_ *cli.Context) error {
 		} else {
 			cPage := currentPage + 1
 			f, err := os.Create("./dist/" + strconv.Itoa(cPage) + ".html")
+			smap.Add(&sitemap.URL{Loc: "https://planetgolang.dev/" + strconv.Itoa(cPage) + ".html", LastMod: &now, ChangeFreq: sitemap.Hourly})
 
 			if err != nil {
 				log.Fatalf("Failed to generate site: %s", err.Error())
@@ -169,6 +175,15 @@ func Generate(_ *cli.Context) error {
 
 		currentPage += 1
 	}
+
+	f, err = os.Create("./dist/sitemap.xml")
+
+	if err != nil {
+		log.Fatalf("Failed to generate site: %s", err.Error())
+	}
+	defer f.Close()
+
+	smap.WriteTo(f)
 
 	return nil
 }

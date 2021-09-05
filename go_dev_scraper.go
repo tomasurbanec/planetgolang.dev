@@ -37,16 +37,18 @@ func GoDevScraper(key string, src *Source) ([]Post, error) {
 		url := "https://go.dev" + href
 		previousPost, _ := FindPostByUrl(url)
 
-		post := Post{
-			Model:       gorm.Model{ID: previousPost.ID},
-			Title:       s.Find("a").Text(),
-			Author:      s.Find(".author").Text(),
-			Url:         url,
-			Source:      key,
-			PublishedAt: t,
-		}
+		if previousPost.DeletedAt.Time.IsZero() {
+			post := Post{
+				Model:       gorm.Model{ID: previousPost.ID},
+				Title:       s.Find("a").Text(),
+				Author:      s.Find(".author").Text(),
+				Url:         url,
+				Source:      key,
+				PublishedAt: t,
+			}
 
-		ary = append(ary, post)
+			ary = append(ary, post)
+		}
 	})
 
 	doc.Find(".blogsummary").Each(func(i int, s *goquery.Selection) {

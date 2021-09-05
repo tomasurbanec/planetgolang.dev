@@ -33,6 +33,10 @@ func FeedScraper(key string, src *Source) ([]Post, error) {
 
 		previousPost, _ := FindPostByUrl(item.Link)
 
+		if !previousPost.DeletedAt.Time.IsZero() {
+			continue
+		}
+
 		post := Post{
 			Model:       gorm.Model{ID: previousPost.ID},
 			Title:       item.Title,

@@ -22,7 +22,7 @@ func InitializeDb() error {
 func FindPostByUrl(url string) (Post, error) {
 	post := Post{}
 
-	err := Db.Where("url = ?", url).First(&post).Error
+	err := Db.Unscoped().Where("url = ?", url).First(&post).Error
 
 	return post, err
 }

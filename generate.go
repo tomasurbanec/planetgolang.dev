@@ -20,6 +20,7 @@ type Page struct {
 	Posts       []Post
 	TotalPages  int
 	CurrentPage int
+	Now         string
 }
 
 func Generate(_ *cli.Context) error {
@@ -53,6 +54,8 @@ func Generate(_ *cli.Context) error {
 	if err != nil {
 		return err
 	}
+	now := time.Now()
+	nowStr := now.UTC().Format("2006-01-02T15:04:05Z07:00")
 
 	f, err := os.Create("./dist/what.html")
 	if err != nil {
@@ -60,11 +63,10 @@ func Generate(_ *cli.Context) error {
 	}
 	defer f.Close()
 
-	indexTmpl.ExecuteTemplate(f, "what.tmpl", nil)
+	indexTmpl.ExecuteTemplate(f, "what.tmpl", Page{Now: nowStr})
 
 	yaml.Unmarshal(feeds, &sources)
 
-	now := time.Now()
 	feed := &fd.Feed{
 		Title:       "Planet Golang",
 		Link:        &fd.Link{Href: "https://planetgolang.dev"},
@@ -101,7 +103,7 @@ func Generate(_ *cli.Context) error {
 			})
 		}
 
-		page := Page{Posts: posts, TotalPages: totalPages, CurrentPage: currentPage + 1}
+		page := Page{Posts: posts, TotalPages: totalPages, CurrentPage: currentPage + 1, Now: nowStr}
 
 		if err != nil {
 			log.Fatalf("Failed to generate site: %s", err.Error())

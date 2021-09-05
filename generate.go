@@ -92,10 +92,6 @@ func Generate(_ *cli.Context) error {
 				}
 			}
 
-			if posts[i].Author == "" {
-				posts[i].Author = posts[i].Source
-			}
-
 			feedItems = append(feedItems, &fd.Item{
 				Title:       posts[i].Title,
 				Link:        &fd.Link{Href: posts[i].Url},

@@ -15,3 +15,6 @@ upload:
 	aws s3 cp --recursive --profile planetgolang dist "s3://planetgolang.dev" --acl bucket-owner-full-control
 
 deploy: scrape generate upload
+
+invalidate:
+	aws cloudfront create-invalidation --distribution-id ELHTE4P8I823B --paths "/*" --profile planetgolang

@@ -23,7 +23,7 @@ type Page struct {
 }
 
 func Generate(_ *cli.Context) error {
-	indexTmpl := template.New("index.html.tmpl")
+	indexTmpl := template.New("index.tmpl")
 
 	indexTmpl.Funcs(template.FuncMap{
 		"minus": func(a, b int) int {
@@ -118,7 +118,7 @@ func Generate(_ *cli.Context) error {
 			}
 			defer f.Close()
 
-			err = indexTmpl.ExecuteTemplate(f, "index.html.tmpl", page)
+			err = indexTmpl.ExecuteTemplate(f, "index.tmpl", page)
 
 			if err != nil {
 				log.Fatal(err.Error())
@@ -131,7 +131,7 @@ func Generate(_ *cli.Context) error {
 			}
 			defer f.Close()
 
-			err = indexTmpl.ExecuteTemplate(f, "index.html.tmpl", page)
+			err = indexTmpl.ExecuteTemplate(f, "index.tmpl", page)
 
 			if err != nil {
 				log.Fatal(err.Error())
@@ -158,7 +158,7 @@ func Generate(_ *cli.Context) error {
 			}
 			defer f.Close()
 
-			err = indexTmpl.ExecuteTemplate(f, "index.html.tmpl", page)
+			err = indexTmpl.ExecuteTemplate(f, "index.tmpl", page)
 
 			if err != nil {
 				log.Fatal(err.Error())

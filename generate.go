@@ -54,6 +54,14 @@ func Generate(_ *cli.Context) error {
 		return err
 	}
 
+	f, err := os.Create("./dist/what.html")
+	if err != nil {
+		log.Fatalf("Failed to generate site: %s", err.Error())
+	}
+	defer f.Close()
+
+	indexTmpl.ExecuteTemplate(f, "what.tmpl", nil)
+
 	yaml.Unmarshal(feeds, &sources)
 
 	now := time.Now()
@@ -114,7 +122,7 @@ func Generate(_ *cli.Context) error {
 			}
 			defer f.Close()
 
-			err = indexTmpl.Execute(f, page)
+			err = indexTmpl.ExecuteTemplate(f, "index.html.tmpl", page)
 
 			if err != nil {
 				log.Fatal(err.Error())
@@ -127,7 +135,7 @@ func Generate(_ *cli.Context) error {
 			}
 			defer f.Close()
 
-			err = indexTmpl.Execute(f, page)
+			err = indexTmpl.ExecuteTemplate(f, "index.html.tmpl", page)
 
 			if err != nil {
 				log.Fatal(err.Error())
@@ -154,7 +162,7 @@ func Generate(_ *cli.Context) error {
 			}
 			defer f.Close()
 
-			err = indexTmpl.Execute(f, page)
+			err = indexTmpl.ExecuteTemplate(f, "index.html.tmpl", page)
 
 			if err != nil {
 				log.Fatal(err.Error())

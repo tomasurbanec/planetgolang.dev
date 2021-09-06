@@ -1,10 +1,10 @@
 build:
 	go build -o bin/crawler .
 
-scrape: build
+scrape:
 	bin/crawler scrape
 
-generate: build
+generate:
 	rm -rf dist/*
 	mkdir -p dist
 	bin/crawler generate

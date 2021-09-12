@@ -103,3 +103,23 @@ savola:
   scrape_url: https://savo.la/atom.xml
   url: https://savo.la/#go
   scraper: FeedScraper
+chrissiebenmann:
+  title: Chris Siebenmann
+  scrape_url: https://utcc.utoronto.ca/~cks/space/blog/programming/?atom
+  url: https://utcc.utoronto.ca/~cks/space/blog/programming/
+  scraper: FeedScraper
+elibendersky:
+  title: Eli Bendersky
+  scrape_url: https://eli.thegreenplace.net/feeds/all.atom.xml
+  url: https://eli.thegreenplace.net/
+  scraper: FeedScraper
+moshebeladev:
+  title: Moshe Beladev
+  scrape_url: https://medium.com/feed/@moshe-beladev-mb
+  url: https://moshe-beladev-mb.medium.com/
+  scraper: FeedScraper
+golangdesign:
+  title: Golang.Design Research
+  scrape_url: https://golang.design/research/index.xml
+  url: https://golang.design/research/
+  scraper: FeedScraper

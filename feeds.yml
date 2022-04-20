@@ -123,3 +123,8 @@ golangdesign:
   scrape_url: https://golang.design/research/index.xml
   url: https://golang.design/research/
   scraper: FeedScraper
+jasonbraganza:
+  title: Janusworx
+  scrape_url: https://janusworx.com/categories/planetgo.xml
+  url: https://janusworx.com/blog
+  scraper: FeedScraper

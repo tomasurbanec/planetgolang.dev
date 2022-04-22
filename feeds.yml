@@ -128,3 +128,13 @@ jasonbraganza:
   scrape_url: https://janusworx.com/categories/planetgo.xml
   url: https://janusworx.com/blog
   scraper: FeedScraper
+bitfield:
+  title: Bitfield Consulting
+  scrape_url: http://feeds.feedburner.com/Go-BitfieldConsulting
+  url: https://bitfieldconsulting.com/golang
+  scraper: FeedScraper
+rakyll:
+  title: rakyll.org
+  scrape_url: https://rakyll.org/index.xml
+  url: https://rakyll.org/
+  scraper: FeedScraper

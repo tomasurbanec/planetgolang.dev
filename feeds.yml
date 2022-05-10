@@ -125,7 +125,7 @@ golangdesign:
   scraper: FeedScraper
 jasonbraganza:
   title: Janusworx
-  scrape_url: https://janusworx.com/categories/planetgo.xml
+  scrape_url: https://janusworx.com/tags/planetgo/index.xml
   url: https://janusworx.com/blog
   scraper: FeedScraper
 bitfield:

@@ -8,7 +8,6 @@ require (
 	github.com/PuerkitoBio/goquery v1.7.1
 	github.com/gorilla/feeds v1.1.1
 	github.com/grokify/html-strip-tags-go v0.0.1
-	github.com/mattn/go-sqlite3 v1.14.8
 	github.com/mmcdole/gofeed v1.1.3
 	github.com/snabb/sitemap v1.0.0
 	github.com/urfave/cli/v2 v2.3.0
@@ -23,6 +22,8 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
+	github.com/kr/pretty v0.3.1 // indirect
+	github.com/mattn/go-sqlite3 v1.14.8 // indirect
 	github.com/mmcdole/goxpp v0.0.0-20181012175147-0068e33feabf // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742 // indirect
@@ -30,5 +31,5 @@ require (
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/snabb/diagio v1.0.0 // indirect
 	golang.org/x/net v0.0.0-20210614182718-04defd469f4e // indirect
-	golang.org/x/text v0.3.6 // indirect
+	golang.org/x/text v0.3.8 // indirect
 )

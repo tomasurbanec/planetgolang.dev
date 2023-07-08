@@ -1,5 +1,7 @@
 # planetgolang.dev
 
+**SUNSET NOTICE**: planetgolang.dev is shutting down on August 30th, 2023.
+
 Go check it out! [planetgolang.dev](https://planetgolang.dev)
 
 If you think a feed is missing (or you want yours gone), feel free to open a pull request.

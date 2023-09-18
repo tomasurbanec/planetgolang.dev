@@ -11,8 +11,8 @@ generate:
 	cp -r static/* dist/
 
 upload:
-	aws s3 rm --recursive --profile planetgolang-data-updater "s3://planetgolang/"
-	aws s3 cp --recursive --profile planetgolang-data-updater dist "s3://planetgolang" --acl bucket-owner-full-control
+	aws s3 rm --recursive --profile planetgolang-data-updater "s3://www.planetgolang.dev/"
+	aws s3 cp --recursive --profile planetgolang-data-updater dist "s3://www.planetgolang.dev" --acl bucket-owner-full-control
 
 deploy: scrape generate upload
 

@@ -17,4 +17,4 @@ upload:
 deploy: scrape generate upload
 
 invalidate:
-	aws cloudfront create-invalidation --distribution-id ELHTE4P8I823B --paths "/*" --profile planetgolang
+	aws cloudfront create-invalidation --distribution-id E2DG4KJ4HYJIJ4 --paths "/*" --profile planetgolang-data-updater

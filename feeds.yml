@@ -33,6 +33,11 @@ marcioio:
   url: http://marcio.io
   scrape_url: http://marcio.io/index.xml
   scraper: FeedScraper
+maragudk:
+  title: Markus Wüstenberg
+  url: https://www.maragu.dk/blog
+  scrape_url: https://www.maragu.dk/blog/feed.xml
+  scraper: FeedScraper
 carlosbecker:
   title: Carlos Becker
   url: https://carlosbecker.com/

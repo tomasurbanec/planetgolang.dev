@@ -143,3 +143,8 @@ rakyll:
   scrape_url: https://rakyll.org/index.xml
   url: https://rakyll.org/
   scraper: FeedScraper
+rednafi:
+  title: rednafi.com
+  scraper_url: https://rednafi.com/go/index.xml
+  url: https://rednafi.com/go/
+  scraper: FeedScraper

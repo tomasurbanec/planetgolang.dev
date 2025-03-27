@@ -1,16 +1,18 @@
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 )
+
+const userAgent = "planetgolang.dev/1.0"
 
 func Scrape(url string) (string, error) {
 	client := http.Client{}
 
 	req, err := http.NewRequest("GET", url, nil)
 
-	req.Header.Set("User-Agent", "planetgolang.dev/1.0")
+	req.Header.Set("User-Agent", userAgent)
 
 	if err != nil {
 		return "", err
@@ -24,7 +26,7 @@ func Scrape(url string) (string, error) {
 
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 
 	if err != nil {
 		return "", err

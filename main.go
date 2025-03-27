@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	InitializeDb()
+	InitializeDb("gorm.db", &gorm.Config{})
 
 	app := &cli.App{
 		Commands: []*cli.Command{

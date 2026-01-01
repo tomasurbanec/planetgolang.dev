@@ -178,3 +178,8 @@ jvt:
   scrape_url: https://www.jvt.me/tags/go/feed.articles.xml
   url: https://www.jvt.me/tags/go/
   scraper: FeedScraper
+internalsforinterns:
+  title: Internals for interns
+  scrape_url: https://internals-for-interns.com/tags/go/index.xml
+  url: https://internals-for-interns.com/tags/go/
+  scraper: FeedScraper

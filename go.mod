@@ -1,6 +1,6 @@
 module github.com/paweljw/planetgolang
 
-go 1.17
+go 1.25.0
 
 replace github.com/paweljw/planetgolang => ./
 
@@ -30,6 +30,6 @@ require (
 	github.com/russross/blackfriday/v2 v2.0.1 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
 	github.com/snabb/diagio v1.0.0 // indirect
-	golang.org/x/net v0.38.0 // indirect
-	golang.org/x/text v0.23.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 )

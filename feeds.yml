@@ -183,3 +183,8 @@ internalsforinterns:
   scrape_url: https://internals-for-interns.com/tags/go/index.xml
   url: https://internals-for-interns.com/tags/go/
   scraper: FeedScraper
+krtffl:
+  title: krtffl.dev
+  scrape_url: https://krtffl.dev/index.xml
+  url: https://krtffl.dev/
+  scraper: FeedScraper
